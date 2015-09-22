@@ -1,19 +1,36 @@
-%h1 index
+- if user_signed_in?
+	%p#intro
+		Hello
+		= current_user.name
+		%br/
+		%span
+			Share your inspiration and see what's inspiring others.
+- else
+	%p#intro
+		What's your Muse?
+		%br/
+		%span
+			Share your inspiration and see what's inspiring others.		
 
-- @posts.each do |post|
-	= link_to (image_tag post.image.url(:small)), post
-	%h2= link_to post.title, post
-	%p
-		= post.comments.count
-		Comments
-	%p= time_ago_in_words(post.created_at)
-	%p= post.user.name
-	%p
-		= post.get_upvotes.size
-		Likes
-	%p
-		= post.get_downvotes.size
-		Dislikes
-
-
-= link_to "New Post", new_post_path
+#posts
+	- @posts.each do |post|
+		.post
+			.post_image
+				= link_to (image_tag post.image.url(:small)), post
+			.post_content
+				.title		
+					%h2= link_to post.title, post
+				.data.clearfix
+					%p.username
+						Shared by
+						= post.user.name
+					%p.buttons
+						%span
+							%i.fa.fa-comments-o
+							= post.comments.count
+						%span
+							%i.fa.fa-thumbs-o-up
+							= post.get_upvotes.size
+						%span
+							%i.fa.fa-thumbs-o-down
+							= post.get_downvotes.size
