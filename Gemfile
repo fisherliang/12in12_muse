@@ -13,6 +13,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'paperclip'
 gem 'acts_as_votable'
+gem 'aws-sdk'
 
 group :development, :test do
 
