@@ -8,5 +8,12 @@
 		Comments
 	%p= time_ago_in_words(post.created_at)
 	%p= post.user.name
+	%p
+		= post.get_upvotes.size
+		Likes
+	%p
+		= post.get_downvotes.size
+		Dislikes
+
 
 = link_to "New Post", new_post_path
