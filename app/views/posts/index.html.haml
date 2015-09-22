@@ -1,6 +1,7 @@
 %h1 index
 
 - @posts.each do |post|
+	= link_to (image_tag post.image.url(:small)), post
 	%h1= link_to post.title, post
 	%p= time_ago_in_words(post.created_at)
 	%p= post.user.name
