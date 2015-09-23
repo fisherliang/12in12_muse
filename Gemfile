@@ -13,6 +13,8 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'acts_as_votable'
 gem 'aws-sdk', '< 2.0'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
 
