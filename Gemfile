@@ -15,10 +15,11 @@ gem 'acts_as_votable'
 gem 'aws-sdk', '< 2.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'awesome_rails_console'
 
 group :development, :test do
 
-  gem 'byebug'
+  gem 'byebug', '<5.0'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
